@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock Example</title>
+    <style>
+      #clock {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 1rem;
+        background-color: #f2f2f2;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script>
+      function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        document.getElementById('clock').innerHTML = timeString;
+      }
+      updateClock(); // Call the function once to initialize the clock
+      setInterval(updateClock, 1000); // Update the clock every second
+    </script>
+  </body>
+</html>
